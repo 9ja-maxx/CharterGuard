@@ -13,6 +13,10 @@ npm test
 
 echo "=== 4. Verifying Production Frontend Build ==="
 npm run build
+cd ..
+
+echo "=== 5. Querying Live Contract via GenLayer RPC ==="
+node scripts/inspect_charter.mjs 0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4
 
 echo ""
 echo "🛡️ All CharterGuard verification checks PASSED!"

@@ -6,10 +6,20 @@ All core layers pass automated unit, linter, and integration checks:
 
 | Verification Layer | Command Executed | Result Status |
 |---|---|---|
+| **Live Network RPC Inspection** | `node scripts/inspect_charter.mjs 0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4` | `✓ Live readback verified (Chain ID 61997)` |
 | **Intelligent Contract Suite** | `python3 -m pytest tests -q` | `20 passed in 0.01s` |
 | **GenVM Linter & SDK Checks** | `python3 -X utf8 -m genvm_linter.cli contracts/charter_guard.py` | `✓ Lint passed (3 checks, 0 errors)` |
 | **Frontend State Machine Tests** | `npm test` (inside `frontend/`) | `3 passed in 0.14s` |
-| **Production Web Client Build** | `npm run build` (inside `frontend/`) | `✓ Clean TypeScript/Vite bundle in 726ms` |
+| **Production Web Client Build** | `npm run build` (inside `frontend/`) | `✓ Clean TypeScript/Vite bundle in <300ms` |
+
+## Live Deployment Evidence
+
+- **Deployed Address:** `0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4`
+- **Network:** GenLayer Studio Next (Chain ID: `61997`)
+- **Explorer:** https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4
+- **Readback Results:**
+  - `get_protocol_metadata()`: Verified protocol name `CharterGuard`, author-only enactment sentry, non-custodial.
+  - `get_charter_counts()`: Verified initialized state `{ charters: 0, amendments: 0, audits: 0 }`.
 
 ## Behavioral Coverage Matrix
 

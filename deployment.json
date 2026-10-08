@@ -2,9 +2,10 @@
   "project": "CharterGuard",
   "network": "GenLayer Studio Next",
   "chain_id": 61997,
-  "contract_address": null,
-  "deployer": null,
-  "status": "READY_FOR_DEPLOYMENT",
-  "frontend_url": null,
-  "notes": "Intelligent Contract is fully tested, linted, and ready for deployment on Studio Next."
+  "contract_address": "0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4",
+  "explorer_url": "https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4",
+  "rpc_url": "https://studio-next.genlayer.com/api",
+  "status": "DEPLOYED_AND_VERIFIED",
+  "verified_at": "2026-10-08T12:13:13Z",
+  "notes": "Intelligent Contract deployed and RPC state readbacks verified on GenLayer Studio Next."
 }
