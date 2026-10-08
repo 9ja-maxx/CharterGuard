@@ -25,7 +25,7 @@ const read = (name, args = []) =>
     jsonSafeReturn: true,
   });
 
-console.log('Inspecting DracoCharter at:', address);
+console.log('Inspecting CharterGuard at:', address);
 const meta = await read('get_protocol_metadata');
 console.log('Protocol metadata:', JSON.stringify(meta, null, 2));
 

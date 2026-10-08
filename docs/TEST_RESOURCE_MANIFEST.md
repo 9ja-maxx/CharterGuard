@@ -1,8 +1,8 @@
-# 🐉 DracoCharter Test Resource Manifest
+# 🛡️ CharterGuard Test Resource Manifest
 
 ## Actors & Roles
 
-- **Deployer**: Deploys `contracts/draco_charter.py` on GenLayer Studio Next. Possesses zero admin roles, constructor privileges, or special operational authority.
+- **Deployer**: Deploys `contracts/charter_guard.py` on GenLayer Studio Next. Possesses zero admin roles, constructor privileges, or special operational authority.
 - **Charter Author (Wallet A)**: Establishes the baseline mandate (Epoch 1) and holds exclusive authority to enact certified amendments for this specific charter.
 - **Auditor / Revision Proposer (Wallet B)**: Independent community participant who drafts prospective amendments, submits changelog disclosures, and triggers semantic validator audits.
 - **Third-Party Reviewer (Wallet C)**: Unprivileged outsider attempting unauthorized enactment or replay attacks.

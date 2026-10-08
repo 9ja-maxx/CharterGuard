@@ -1,4 +1,4 @@
-# 🐉 DracoCharter Architecture
+# 🛡️ CharterGuard Architecture
 
 ## Proof Obligation
 

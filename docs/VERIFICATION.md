@@ -1,4 +1,4 @@
-# 🐉 DracoCharter Verification & Test Evidence
+# 🛡️ CharterGuard Verification & Test Evidence
 
 ## Automated Verification Suite
 
@@ -7,7 +7,7 @@ All core layers pass automated unit, linter, and integration checks:
 | Verification Layer | Command Executed | Result Status |
 |---|---|---|
 | **Intelligent Contract Suite** | `python3 -m pytest tests -q` | `20 passed in 0.01s` |
-| **GenVM Linter & SDK Checks** | `python3 -X utf8 -m genvm_linter.cli contracts/draco_charter.py` | `✓ Lint passed (3 checks, 0 errors)` |
+| **GenVM Linter & SDK Checks** | `python3 -X utf8 -m genvm_linter.cli contracts/charter_guard.py` | `✓ Lint passed (3 checks, 0 errors)` |
 | **Frontend State Machine Tests** | `npm test` (inside `frontend/`) | `3 passed in 0.14s` |
 | **Production Web Client Build** | `npm run build` (inside `frontend/`) | `✓ Clean TypeScript/Vite bundle in 726ms` |
 
