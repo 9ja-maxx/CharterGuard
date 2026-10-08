@@ -1,11 +1,11 @@
-# 🐉 DRACOCHARTER
+# 🛡️ CHARTERGUARD
 
 > **Autonomous DAO Governance Mandate & Revision Sentry on GenLayer**  
 > *Governed by Multi-Validator Comparative Consensus, Deterministic Calldata Diffing, and Author-Only Enactment Sentry.*
 
 [![GenLayer Studio Next](https://img.shields.io/badge/GenLayer-Studio_Next_61997-f59e0b?style=for-the-badge&logo=ethereum&logoColor=black)](https://explorer-studio-dev.genlayer.com)
-[![GenVM Linter](https://img.shields.io/badge/GenVM_Linter-3_Checks_Passed-10b981?style=for-the-badge)](contracts/draco_charter.py)
-[![Test Suite](https://img.shields.io/badge/Pytest-20_Passed-10b981?style=for-the-badge)](tests/test_draco_charter.py)
+[![GenVM Linter](https://img.shields.io/badge/GenVM_Linter-3_Checks_Passed-10b981?style=for-the-badge)](contracts/charter_guard.py)
+[![Test Suite](https://img.shields.io/badge/Pytest-20_Passed-10b981?style=for-the-badge)](tests/test_charter_guard.py)
 [![Frontend](https://img.shields.io/badge/React_19-TypeScript_Vite-6366f1?style=for-the-badge)](frontend/)
 
 ---
@@ -18,13 +18,13 @@ In decentralized governance, foundational charters, grant covenants, and treasur
 - **The Centralized Oracle Trap:** Delegating revision auditing to a centralized AI service or single foundation operator introduces censorship and single-point-of-failure vulnerabilities. A compromised operator can selectively rubber-stamp amendments that favor allied factions.
 - **The Deceptive Changelog Attack:** A proposer modifies critical execution parameters (e.g. increasing budget caps or redirecting funds) while submitting a deceptive changelog summary claiming *"Minor formatting cleanup and grammar fixes."*
 
-**DracoCharter** solves this by establishing a decentralized, multi-validator revision defense gate on GenLayer. It decouples machine parameter diffing from semantic disclosure analysis, guaranteeing that no governance amendment can become active canon unless its author transparently discloses every material alteration to the community.
+**CharterGuard** solves this by establishing a decentralized, multi-validator revision defense gate on GenLayer. It decouples machine parameter diffing from semantic disclosure analysis, guaranteeing that no governance amendment can become active canon unless its author transparently discloses every material alteration to the community.
 
 ---
 
-## 🐉 The Dragon Sentry Architecture
+## 🛡️ The Guardian Sentry Architecture
 
-DracoCharter enforces a strict division of authority across four specialized layers:
+CharterGuard enforces a strict division of authority across four specialized layers:
 
 ```mermaid
 flowchart TD
@@ -40,7 +40,7 @@ flowchart TD
         F -- No --> H["Tagged: CALLEDATA_UNCHANGED"]
     end
 
-    subgraph S3["3. Dragon's Council: Multi-Validator Semantic Consensus"]
+    subgraph S3["3. Guardian Council: Multi-Validator Semantic Consensus"]
         G --> I["gl.eq_principle.prompt_comparative"]
         H --> I
         I --> J["Validator 1: Independent Prompt Execution"]
@@ -69,10 +69,10 @@ flowchart TD
 ## ⚔️ Stand-Out Technical Innovations
 
 ### 1. Deterministic Calldata Diffing vs. Non-Deterministic Semantic Consensus
-Unlike naive LLM contracts that trust an AI to spot number and address differences in messy text, DracoCharter strictly normalizes and diffs calldata manifests in Python smart contract code (`compute_manifest_divergence`). If an address, selector, asset, or amount changes, the contract flags it deterministically. The GenLayer AI validators are tasked strictly with judging whether the human prose changelog completely explains those changes to voters.
+Unlike naive LLM contracts that trust an AI to spot number and address differences in messy text, CharterGuard strictly normalizes and diffs calldata manifests in Python smart contract code (`compute_manifest_divergence`). If an address, selector, asset, or amount changes, the contract flags it deterministically. The GenLayer AI validators are tasked strictly with judging whether the human prose changelog completely explains those changes to voters.
 
 ### 2. Deterministic Action Diff Override Gate
-Even if an LLM validator hallucinates or outputs `FULLY_DISCLOSED`, DracoCharter's on-chain smart contract code executes a hard override:
+Even if an LLM validator hallucinates or outputs `FULLY_DISCLOSED`, CharterGuard's on-chain smart contract code executes a hard override:
 ```python
 has_action_diff = len(amendment["divergence_flags"]) > 0
 diff_disclosed = "EXECUTABLE_ACTION_DELTA" in verdict.get("material_impacts", [])
@@ -86,7 +86,7 @@ is_disclosed = (
 If an action divergence exists on-chain and was omitted from the audit's disclosed impact list, the contract automatically overrides the result and **vetoes the amendment**.
 
 ### 3. Effect-Aligned Equivalence Principle
-Naive equivalence prompts demand exact string matching over subjective diagnostic labels, resulting in validator consensus deadlock. DracoCharter leverages an effect-aligned comparator:
+Naive equivalence prompts demand exact string matching over subjective diagnostic labels, resulting in validator consensus deadlock. CharterGuard leverages an effect-aligned comparator:
 > *"Validators agree if they match on whether the disclosure is complete and whether the amendment qualifies for certification versus veto. Minor diagnostic category differences are acceptable."*
 
 This guarantees high consensus stability without sacrificing security.
@@ -95,19 +95,19 @@ This guarantees high consensus stability without sacrificing security.
 AI validators never hold the power to enact a charter amendment. Validators only establish the bounded verification premise (`AUDIT_CERTIFIED`). Enacting a certified draft into active canon is strictly restricted to the charter's original author (`get_caller_address() == charter["author"]`), eliminating frontrunning, hostile hijacking, or unauthorized governance amendments.
 
 ### 5. Native GenVM Exception Safety
-DracoCharter avoids the pitfall of returning error strings (which exit with `FINISHED_WITH_RETURN` and mislead client wallets). All precondition violations raise native `gl.vm.UserError` exceptions (e.g. `STALE_CHARTER_EPOCH`, `ONLY_CHARTER_AUTHOR`, `PARENT_TEXT_HASH_MISMATCH`), guaranteeing atomic reversions on failure.
+CharterGuard avoids the pitfall of returning error strings (which exit with `FINISHED_WITH_RETURN` and mislead client wallets). All precondition violations raise native `gl.vm.UserError` exceptions (e.g. `STALE_CHARTER_EPOCH`, `ONLY_CHARTER_AUTHOR`, `PARENT_TEXT_HASH_MISMATCH`), guaranteeing atomic reversions on failure.
 
 ---
 
 ## 📁 Repository Map
 
 ```text
-DracoCharter/
+CharterGuard/
 ├── contracts/
-│   └── draco_charter.py           # GenLayer Intelligent Contract (100% GenVM compliant)
+│   └── charter_guard.py           # GenLayer Intelligent Contract (100% GenVM compliant)
 ├── tests/
 │   ├── conftest.py                # GenVM test runtime & fixture harnesses
-│   └── test_draco_charter.py      # 20 direct & adversarial unit tests
+│   └── test_charter_guard.py      # 20 direct & adversarial unit tests
 ├── frontend/
 │   ├── src/
 │   │   ├── App.tsx                # Obsidian/Gold sovereign governance client
@@ -125,7 +125,7 @@ DracoCharter/
 │   └── TEST_RESOURCE_MANIFEST.md  # Standardized test actors and synthetic fixtures
 ├── gltest.config.yaml             # GenLayer test network configuration
 ├── requirements-dev.txt           # Python testing dependencies
-└── README.md                      # Master documentation with Dragon Flowchart
+└── README.md                      # Master documentation with Guardian Architecture Flowchart
 ```
 
 ---
@@ -136,7 +136,7 @@ To verify the build from scratch:
 
 ### 1. Run GenVM Linter
 ```bash
-python3 -X utf8 -m genvm_linter.cli contracts/draco_charter.py
+python3 -X utf8 -m genvm_linter.cli contracts/charter_guard.py
 ```
 *Expected Output:* `✓ Lint passed (3 checks)`
 
@@ -164,7 +164,7 @@ cd frontend && npm run build
 
 1. Open the [GenLayer Studio IDE](https://studio.genlayer.com).
 2. Connect to **GenLayer Studio Next (Chain ID 61997)**.
-3. Import `contracts/draco_charter.py`.
+3. Import `contracts/charter_guard.py`.
 4. Deploy the contract (the constructor requires zero parameters).
 5. Copy the deployed contract address (e.g. `0x...`).
 6. Configure `frontend/.env`:
