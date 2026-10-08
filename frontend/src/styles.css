@@ -35,13 +35,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.draco-layout {
+.cg-layout {
   display: flex;
   min-height: 100vh;
 }
 
 /* Sidebar */
-.draco-sidebar {
+.cg-sidebar {
   width: 270px;
   background-color: #0b0d13;
   border-right: 1px solid var(--border-subtle);
@@ -51,7 +51,7 @@ body {
   flex-shrink: 0;
 }
 
-.draco-brand {
+.cg-brand {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -59,12 +59,12 @@ body {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.draco-logo {
+.cg-logo {
   font-size: 28px;
   filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4));
 }
 
-.draco-title-wrap h2 {
+.cg-title-wrap h2 {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -73,7 +73,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.draco-title-wrap span {
+.cg-title-wrap span {
   font-size: 11px;
   color: var(--text-dim);
   text-transform: uppercase;
@@ -81,7 +81,7 @@ body {
   font-weight: 600;
 }
 
-.draco-nav {
+.cg-nav {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@ body {
   flex: 1;
 }
 
-.draco-nav-btn {
+.cg-nav-btn {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -105,20 +105,20 @@ body {
   text-align: left;
 }
 
-.draco-nav-btn:hover {
+.cg-nav-btn:hover {
   background: var(--bg-hover);
   color: var(--text-main);
   border-color: var(--border-subtle);
 }
 
-.draco-nav-btn.active {
+.cg-nav-btn.active {
   background: rgba(245, 158, 11, 0.1);
   color: var(--gold-primary);
   border-color: rgba(245, 158, 11, 0.3);
   font-weight: 600;
 }
 
-.draco-sidebar-footer {
+.cg-sidebar-footer {
   padding-top: 16px;
   border-top: 1px solid var(--border-subtle);
   font-size: 12px;
@@ -127,7 +127,7 @@ body {
   gap: 6px;
 }
 
-.draco-network-tag {
+.cg-network-tag {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -136,7 +136,7 @@ body {
   font-size: 11px;
 }
 
-.draco-contract-link {
+.cg-contract-link {
   color: var(--text-dim);
   text-decoration: none;
   display: flex;
@@ -146,12 +146,12 @@ body {
   transition: color 0.2s;
 }
 
-.draco-contract-link:hover {
+.cg-contract-link:hover {
   color: var(--gold-primary);
 }
 
 /* Main Content Area */
-.draco-main {
+.cg-main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -159,7 +159,7 @@ body {
   max-width: 1400px;
 }
 
-.draco-header {
+.cg-header {
   padding: 24px 36px;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
@@ -172,7 +172,7 @@ body {
   z-index: 50;
 }
 
-.draco-header-title span {
+.cg-header-title span {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -180,14 +180,14 @@ body {
   text-transform: uppercase;
 }
 
-.draco-header-title h1 {
+.cg-header-title h1 {
   font-size: 22px;
   font-weight: 700;
   color: #fff;
   margin-top: 2px;
 }
 
-.draco-wallet-btn {
+.cg-wallet-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -203,12 +203,12 @@ body {
   transition: all 0.2s;
 }
 
-.draco-wallet-btn:hover {
+.cg-wallet-btn:hover {
   border-color: var(--gold-primary);
   box-shadow: 0 0 12px var(--gold-glow);
 }
 
-.draco-view-container {
+.cg-view-container {
   padding: 36px;
   display: flex;
   flex-direction: column;
@@ -216,7 +216,7 @@ body {
 }
 
 /* Notice Banner */
-.draco-banner {
+.cg-banner {
   padding: 14px 20px;
   border-radius: 8px;
   display: flex;
@@ -225,25 +225,25 @@ body {
   font-size: 14px;
 }
 
-.draco-banner.busy {
+.cg-banner.busy {
   background: rgba(245, 158, 11, 0.08);
   border: 1px solid rgba(245, 158, 11, 0.3);
   color: var(--gold-primary);
 }
 
-.draco-banner.ok {
+.cg-banner.ok {
   background: rgba(16, 185, 129, 0.08);
   border: 1px solid rgba(16, 185, 129, 0.3);
   color: var(--emerald-accent);
 }
 
-.draco-banner.err {
+.cg-banner.err {
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.3);
   color: var(--flame-accent);
 }
 
-.draco-banner a {
+.cg-banner a {
   margin-left: auto;
   color: inherit;
   font-weight: 600;
@@ -254,7 +254,7 @@ body {
 }
 
 /* Hero Section */
-.draco-hero {
+.cg-hero {
   background: linear-gradient(135deg, #101420 0%, #0a0b10 100%);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -266,7 +266,7 @@ body {
   overflow: hidden;
 }
 
-.draco-hero::before {
+.cg-hero::before {
   content: "";
   position: absolute;
   top: -50px;
@@ -277,11 +277,11 @@ body {
   pointer-events: none;
 }
 
-.draco-hero-content {
+.cg-hero-content {
   max-width: 650px;
 }
 
-.draco-hero-badge {
+.cg-hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -293,20 +293,20 @@ body {
   margin-bottom: 8px;
 }
 
-.draco-hero h2 {
+.cg-hero h2 {
   font-size: 26px;
   font-weight: 800;
   color: #fff;
   margin-bottom: 12px;
 }
 
-.draco-hero p {
+.cg-hero p {
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
 }
 
-.draco-hero-seal {
+.cg-hero-seal {
   background: rgba(245, 158, 11, 0.05);
   border: 1px solid rgba(245, 158, 11, 0.2);
   border-radius: 10px;
@@ -319,24 +319,24 @@ body {
   min-width: 220px;
 }
 
-.draco-hero-seal span {
+.cg-hero-seal span {
   font-size: 12px;
   color: var(--text-dim);
 }
 
-.draco-hero-seal strong {
+.cg-hero-seal strong {
   font-size: 13px;
   color: var(--gold-primary);
 }
 
 /* Metric Cards */
-.draco-metrics-grid {
+.cg-metrics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.draco-metric-card {
+.cg-metric-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
@@ -345,14 +345,14 @@ body {
   flex-direction: column;
 }
 
-.draco-metric-val {
+.cg-metric-val {
   font-size: 32px;
   font-weight: 800;
   font-family: var(--font-mono);
   color: #fff;
 }
 
-.draco-metric-lbl {
+.cg-metric-lbl {
   font-size: 13px;
   color: var(--text-dim);
   font-weight: 500;
@@ -362,31 +362,31 @@ body {
 }
 
 /* Mandates Grid */
-.draco-grid-header {
+.cg-grid-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 16px;
 }
 
-.draco-grid-header h3 {
+.cg-grid-header h3 {
   font-size: 18px;
   font-weight: 700;
   color: #fff;
 }
 
-.draco-grid-header p {
+.cg-grid-header p {
   font-size: 13px;
   color: var(--text-dim);
 }
 
-.draco-cards-container {
+.cg-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 20px;
 }
 
-.draco-charter-card {
+.charter-guard-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -399,19 +399,19 @@ body {
   text-align: left;
 }
 
-.draco-charter-card:hover {
+.charter-guard-card:hover {
   transform: translateY(-2px);
   border-color: var(--gold-primary);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.draco-card-top {
+.cg-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.draco-domain-badge {
+.cg-domain-badge {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
@@ -423,7 +423,7 @@ body {
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
-.draco-epoch-badge {
+.cg-epoch-badge {
   font-size: 11px;
   font-weight: 700;
   font-family: var(--font-mono);
@@ -431,37 +431,37 @@ body {
   border-radius: 4px;
 }
 
-.draco-epoch-badge.emerald {
+.cg-epoch-badge.emerald {
   background: rgba(16, 185, 129, 0.15);
   color: var(--emerald-accent);
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-.draco-epoch-badge.amber {
+.cg-epoch-badge.amber {
   background: rgba(251, 191, 36, 0.15);
   color: var(--amber-accent);
   border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
-.draco-epoch-badge.flame {
+.cg-epoch-badge.flame {
   background: rgba(239, 68, 68, 0.15);
   color: var(--flame-accent);
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.draco-epoch-badge.slate {
+.cg-epoch-badge.slate {
   background: rgba(100, 116, 139, 0.15);
   color: var(--text-dim);
   border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
-.draco-charter-card h4 {
+.charter-guard-card h4 {
   font-size: 16px;
   font-weight: 700;
   color: #fff;
 }
 
-.draco-charter-card p {
+.charter-guard-card p {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
@@ -471,7 +471,7 @@ body {
   overflow: hidden;
 }
 
-.draco-card-foot {
+.cg-card-foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -483,7 +483,7 @@ body {
 }
 
 /* Forms & Inputs */
-.draco-form {
+.cg-form {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -493,33 +493,33 @@ body {
   gap: 24px;
 }
 
-.draco-form-header h2 {
+.cg-form-header h2 {
   font-size: 20px;
   font-weight: 700;
   color: #fff;
 }
 
-.draco-form-header p {
+.cg-form-header p {
   font-size: 13px;
   color: var(--text-dim);
   margin-top: 4px;
 }
 
-.draco-field {
+.cg-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.draco-field label {
+.cg-field label {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-main);
 }
 
-.draco-input,
-.draco-textarea,
-.draco-select {
+.cg-input,
+.cg-textarea,
+.cg-select {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
@@ -530,20 +530,20 @@ body {
   transition: border-color 0.2s;
 }
 
-.draco-input:focus,
-.draco-textarea:focus,
-.draco-select:focus {
+.cg-input:focus,
+.cg-textarea:focus,
+.cg-select:focus {
   outline: none;
   border-color: var(--gold-primary);
 }
 
-.draco-textarea {
+.cg-textarea {
   min-height: 110px;
   resize: vertical;
   line-height: 1.6;
 }
 
-.draco-btn-primary {
+.cg-btn-primary {
   background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
   color: #000;
   border: none;
@@ -559,25 +559,25 @@ body {
   transition: all 0.2s;
 }
 
-.draco-btn-primary:hover {
+.cg-btn-primary:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 16px var(--gold-glow);
 }
 
-.draco-btn-primary:disabled {
+.cg-btn-primary:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   filter: grayscale(1);
 }
 
 /* Workbench Split View */
-.draco-workbench {
+.cg-workbench {
   display: grid;
   grid-template-columns: 1fr 1fr 340px;
   gap: 24px;
 }
 
-.draco-column-panel {
+.cg-column-panel {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -587,7 +587,7 @@ body {
   gap: 16px;
 }
 
-.draco-panel-header {
+.cg-panel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -595,13 +595,13 @@ body {
   padding-bottom: 12px;
 }
 
-.draco-panel-header h3 {
+.cg-panel-header h3 {
   font-size: 15px;
   font-weight: 700;
   color: #fff;
 }
 
-.draco-hash-code {
+.cg-hash-code {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--text-dim);
@@ -611,13 +611,13 @@ body {
   word-break: break-all;
 }
 
-.draco-diff-badges {
+.cg-diff-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.draco-diff-pill {
+.cg-diff-pill {
   font-size: 10px;
   font-weight: 700;
   padding: 3px 8px;
@@ -629,13 +629,13 @@ body {
 }
 
 /* Audit Log */
-.draco-audit-list {
+.cg-audit-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.draco-audit-card {
+.cg-audit-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
@@ -645,13 +645,13 @@ body {
   gap: 12px;
 }
 
-.draco-audit-top {
+.cg-audit-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.draco-empty {
+.cg-empty {
   text-align: center;
   padding: 60px 20px;
   color: var(--text-dim);
@@ -662,14 +662,14 @@ body {
 }
 
 /* Action manifest sub-form */
-.draco-manifest-builder {
+.cg-manifest-builder {
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 16px;
   background: var(--bg-surface);
 }
 
-.draco-manifest-grid {
+.cg-manifest-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;

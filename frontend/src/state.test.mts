@@ -2,7 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { canAuditAmendment, canEnactAmendment, getStatusTone, isPendingReview } from './state.ts';
 
-describe('DracoCharter state and lifecycle rules', () => {
+describe('CharterGuard state and lifecycle rules', () => {
   it('correctly maps actionable amendment states', () => {
     assert.equal(canAuditAmendment('AMENDMENT_PROPOSED'), true);
     assert.equal(canAuditAmendment('CONSENSUS_UNRESOLVED'), true);

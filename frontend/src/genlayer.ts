@@ -7,7 +7,7 @@ const env = (import.meta.env || {}) as Record<string, string | undefined>;
 export const CONTRACT_ADDRESS = (env.VITE_CONTRACT_ADDRESS || '').trim();
 export const isConfigured = /^0x[a-fA-F0-9]{40}$/.test(CONTRACT_ADDRESS);
 
-export const DRACO_CHAIN = {
+export const CHARTER_GUARD_CHAIN = {
   ...studioDevnet,
   id: 61997,
   name: 'GenLayer Studio Next',
@@ -19,7 +19,7 @@ export const DRACO_CHAIN = {
 };
 
 // Global read-only client
-const rpcReader = createClient({ chain: DRACO_CHAIN });
+const rpcReader = createClient({ chain: CHARTER_GUARD_CHAIN });
 
 export async function connectWallet(): Promise<string> {
   const provider = window.ethereum;
@@ -78,7 +78,7 @@ export async function writeContract(
   }
 
   const client = createClient({
-    chain: DRACO_CHAIN,
+    chain: CHARTER_GUARD_CHAIN,
     provider,
     account: account as `0x${string}`,
   });

@@ -139,41 +139,41 @@ export default function App() {
   const activeEpoch = selectedCharter ? amendments[selectedCharter.active_amendment_id] : undefined;
 
   return (
-    <div className="draco-layout">
+    <div className="cg-layout">
       {/* Sidebar */}
-      <aside className="draco-sidebar">
-        <div className="draco-brand">
-          <span className="draco-logo">🐉</span>
-          <div className="draco-title-wrap">
-            <h2>DRACOCHARTER</h2>
+      <aside className="cg-sidebar">
+        <div className="cg-brand">
+          <span className="cg-logo">🛡️</span>
+          <div className="cg-title-wrap">
+            <h2>CHARTERGUARD</h2>
             <span>Mandate Revision Sentry</span>
           </div>
         </div>
 
-        <nav className="draco-nav">
+        <nav className="cg-nav">
           <button
-            className={`draco-nav-btn ${activePage === 'canon' ? 'active' : ''}`}
+            className={`cg-nav-btn ${activePage === 'canon' ? 'active' : ''}`}
             onClick={() => setActivePage('canon')}
           >
             <Scroll size={18} />
             Mandate Canon
           </button>
           <button
-            className={`draco-nav-btn ${activePage === 'register' ? 'active' : ''}`}
+            className={`cg-nav-btn ${activePage === 'register' ? 'active' : ''}`}
             onClick={() => setActivePage('register')}
           >
             <FilePlus2 size={18} />
             Establish Mandate
           </button>
           <button
-            className={`draco-nav-btn ${activePage === 'sentry' ? 'active' : ''}`}
+            className={`cg-nav-btn ${activePage === 'sentry' ? 'active' : ''}`}
             onClick={() => setActivePage('sentry')}
           >
             <GitCompare size={18} />
             Amendment Sentry
           </button>
           <button
-            className={`draco-nav-btn ${activePage === 'audits' ? 'active' : ''}`}
+            className={`cg-nav-btn ${activePage === 'audits' ? 'active' : ''}`}
             onClick={() => setActivePage('audits')}
           >
             <FileCheck2 size={18} />
@@ -181,15 +181,15 @@ export default function App() {
           </button>
         </nav>
 
-        <div className="draco-sidebar-footer">
-          <div className="draco-network-tag">
+        <div className="cg-sidebar-footer">
+          <div className="cg-network-tag">
             <span style={{ color: '#10b981' }}>●</span> Studio Next (61997)
           </div>
           <a
             href={isConfigured ? getExplorerAddressUrl() : '#'}
             target="_blank"
             rel="noreferrer"
-            className="draco-contract-link"
+            className="cg-contract-link"
           >
             {isConfigured ? formatAddress(CONTRACT_ADDRESS) : 'Contract unconfigured'}
             <ExternalLink size={12} />
@@ -198,9 +198,9 @@ export default function App() {
       </aside>
 
       {/* Main Panel */}
-      <main className="draco-main">
-        <header className="draco-header">
-          <div className="draco-header-title">
+      <main className="cg-main">
+        <header className="cg-header">
+          <div className="cg-header-title">
             <span>SOVEREIGN MANDATE DRIFT GUARD</span>
             <h1>
               {activePage === 'canon' && 'Governance Mandate Registry'}
@@ -210,22 +210,22 @@ export default function App() {
             </h1>
           </div>
 
-          <button className="draco-wallet-btn" onClick={handleConnect}>
+          <button className="cg-wallet-btn" onClick={handleConnect}>
             <Wallet size={16} />
             {connectedWallet ? formatAddress(connectedWallet) : 'Connect Wallet'}
           </button>
         </header>
 
-        <div className="draco-view-container">
+        <div className="cg-view-container">
           {!isConfigured && (
-            <div className="draco-banner err">
+            <div className="cg-banner err">
               <XCircle size={18} />
               <span>Contract address missing. Set VITE_CONTRACT_ADDRESS in frontend/.env</span>
             </div>
           )}
 
           {notice && (
-            <div className={`draco-banner ${notice.type}`}>
+            <div className={`cg-banner ${notice.type}`}>
               {notice.type === 'busy' && <Loader2 size={18} className="animate-spin" />}
               {notice.type === 'ok' && <CheckCircle2 size={18} />}
               {notice.type === 'err' && <ShieldAlert size={18} />}
@@ -241,74 +241,74 @@ export default function App() {
           {/* View 1: Canon Registry */}
           {activePage === 'canon' && (
             <>
-              <section className="draco-hero">
-                <div className="draco-hero-content">
-                  <div className="draco-hero-badge">
+              <section className="cg-hero">
+                <div className="cg-hero-content">
+                  <div className="cg-hero-badge">
                     <Flame size={14} /> IMMUTABLE MANDATE EVOLUTION
                   </div>
                   <h2>Protect DAO Charters from Deceptive Scope Creep</h2>
                   <p>
-                    DracoCharter enforces cryptographic parent-hash binding on governance revisions,
+                    CharterGuard enforces cryptographic parent-hash binding on governance revisions,
                     computes machine diffs over executable calldata parameters deterministically,
                     and mandates multi-validator semantic consensus to ensure change summaries
                     completely disclose material alterations before author enactment.
                   </p>
                 </div>
-                <div className="draco-hero-seal">
+                <div className="cg-hero-seal">
                   <ShieldCheck size={28} color="#f59e0b" />
                   <strong>Author-Only Enactment</strong>
                   <span>Validators cannot activate amendments</span>
                 </div>
               </section>
 
-              <div className="draco-metrics-grid">
-                <div className="draco-metric-card">
-                  <span className="draco-metric-val">{String(counts.charters).padStart(2, '0')}</span>
-                  <span className="draco-metric-lbl">Active Charters</span>
+              <div className="cg-metrics-grid">
+                <div className="cg-metric-card">
+                  <span className="cg-metric-val">{String(counts.charters).padStart(2, '0')}</span>
+                  <span className="cg-metric-lbl">Active Charters</span>
                 </div>
-                <div className="draco-metric-card">
-                  <span className="draco-metric-val">{String(counts.amendments).padStart(2, '0')}</span>
-                  <span className="draco-metric-lbl">Sealed Epochs</span>
+                <div className="cg-metric-card">
+                  <span className="cg-metric-val">{String(counts.amendments).padStart(2, '0')}</span>
+                  <span className="cg-metric-lbl">Sealed Epochs</span>
                 </div>
-                <div className="draco-metric-card">
-                  <span className="draco-metric-val">{String(counts.audits).padStart(2, '0')}</span>
-                  <span className="draco-metric-lbl">Validator Audits</span>
+                <div className="cg-metric-card">
+                  <span className="cg-metric-val">{String(counts.audits).padStart(2, '0')}</span>
+                  <span className="cg-metric-lbl">Validator Audits</span>
                 </div>
               </div>
 
               <div>
-                <div className="draco-grid-header">
+                <div className="cg-grid-header">
                   <div>
                     <h3>Enacted Mandates</h3>
                     <p>Select any charter to audit pending amendments</p>
                   </div>
-                  <button className="draco-wallet-btn" onClick={refreshState}>
+                  <button className="cg-wallet-btn" onClick={refreshState}>
                     <RefreshCw size={14} /> Refresh
                   </button>
                 </div>
 
                 {charters.length > 0 ? (
-                  <div className="draco-cards-container">
+                  <div className="cg-cards-container">
                     {charters.map((charter) => {
                       const active = amendments[charter.active_amendment_id];
                       return (
                         <div
                           key={charter.charter_id}
-                          className="draco-charter-card"
+                          className="charter-guard-card"
                           onClick={() => {
                             setSelectedCharterId(charter.charter_id);
                             setActivePage('sentry');
                           }}
                         >
-                          <div className="draco-card-top">
-                            <span className="draco-domain-badge">{charter.domain}</span>
-                            <span className={`draco-epoch-badge ${getStatusTone(active?.status || charter.status)}`}>
+                          <div className="cg-card-top">
+                            <span className="cg-domain-badge">{charter.domain}</span>
+                            <span className={`cg-epoch-badge ${getStatusTone(active?.status || charter.status)}`}>
                               Epoch {charter.current_epoch}
                             </span>
                           </div>
                           <h4>{charter.title}</h4>
                           <p>{active?.charter_text || 'Loading canonical mandate prose…'}</p>
-                          <div className="draco-card-foot">
+                          <div className="cg-card-foot">
                             <span>Author: {formatAddress(charter.author)}</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#f59e0b' }}>
                               Audit Diff <ArrowRight size={14} />
@@ -319,7 +319,7 @@ export default function App() {
                     })}
                   </div>
                 ) : (
-                  <div className="draco-empty">
+                  <div className="cg-empty">
                     No mandates established yet. Connect your wallet and seal the first baseline.
                   </div>
                 )}
@@ -394,16 +394,16 @@ function RegisterView({
   }
 
   return (
-    <form className="draco-form" onSubmit={handleSubmit}>
-      <div className="draco-form-header">
+    <form className="cg-form" onSubmit={handleSubmit}>
+      <div className="cg-form-header">
         <h2>Establish Sovereign Charter Mandate</h2>
         <p>Your wallet becomes the sole enactment authority for certified amendments to this mandate.</p>
       </div>
 
-      <div className="draco-field">
+      <div className="cg-field">
         <label>Mandate Title</label>
         <input
-          className="draco-input"
+          className="cg-input"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Protocol Security & Treasury Allocation Mandate"
@@ -412,9 +412,9 @@ function RegisterView({
         />
       </div>
 
-      <div className="draco-field">
+      <div className="cg-field">
         <label>Governance Domain</label>
-        <select className="draco-select" value={domain} onChange={(e) => setDomain(e.target.value)}>
+        <select className="cg-select" value={domain} onChange={(e) => setDomain(e.target.value)}>
           <option value="TREASURY_MANDATE">TREASURY_MANDATE</option>
           <option value="GRANT_COVENANT">GRANT_COVENANT</option>
           <option value="SECURITY_DIRECTIVE">SECURITY_DIRECTIVE</option>
@@ -423,10 +423,10 @@ function RegisterView({
         </select>
       </div>
 
-      <div className="draco-field">
+      <div className="cg-field">
         <label>Canonical Mandate Prose (Epoch 1 Baseline)</label>
         <textarea
-          className="draco-textarea"
+          className="cg-textarea"
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Describe the mandate's purpose, allocation caps, conditions, deliverables, and review deadlines…"
@@ -437,7 +437,7 @@ function RegisterView({
 
       <ActionEditor action={action} onChange={setAction} />
 
-      <button className="draco-btn-primary" type="submit">
+      <button className="cg-btn-primary" type="submit">
         <ShieldCheck size={18} /> Seal Epoch 1 Baseline On-Chain
       </button>
     </form>
@@ -528,7 +528,7 @@ function SentryView({
         {charters.map((c) => (
           <button
             key={c.charter_id}
-            className={`draco-nav-btn ${selectedCharter?.charter_id === c.charter_id ? 'active' : ''}`}
+            className={`cg-nav-btn ${selectedCharter?.charter_id === c.charter_id ? 'active' : ''}`}
             onClick={() => onSelectCharter(c.charter_id)}
           >
             {c.title}
@@ -537,51 +537,51 @@ function SentryView({
       </div>
 
       {!selectedCharter ? (
-        <div className="draco-empty">Create or select a charter first.</div>
+        <div className="cg-empty">Create or select a charter first.</div>
       ) : (
-        <div className="draco-workbench">
+        <div className="cg-workbench">
           {/* Column 1: Active Baseline Canon */}
-          <div className="draco-column-panel">
-            <div className="draco-panel-header">
+          <div className="cg-column-panel">
+            <div className="cg-panel-header">
               <h3>ACTIVE CANON (Epoch {selectedCharter.current_epoch})</h3>
-              <span className="draco-epoch-badge emerald">CANON_ACTIVE</span>
+              <span className="cg-epoch-badge emerald">CANON_ACTIVE</span>
             </div>
-            <div className="draco-field">
+            <div className="cg-field">
               <label>Immutable Prose</label>
               <p style={{ fontSize: '13px', color: '#cbd5e1', lineHeight: '1.6' }}>
                 {activeEpoch?.charter_text}
               </p>
             </div>
-            <div className="draco-field">
+            <div className="cg-field">
               <label>Text SHA-256 Digest</label>
-              <code className="draco-hash-code">{activeEpoch?.text_hash}</code>
+              <code className="cg-hash-code">{activeEpoch?.text_hash}</code>
             </div>
-            <div className="draco-field">
+            <div className="cg-field">
               <label>Calldata Manifest Parameters</label>
-              <pre className="draco-hash-code">{JSON.stringify(activeEpoch?.actions, null, 2)}</pre>
+              <pre className="cg-hash-code">{JSON.stringify(activeEpoch?.actions, null, 2)}</pre>
             </div>
           </div>
 
           {/* Column 2: Proposed Amendment Draft */}
-          <div className="draco-column-panel">
-            <div className="draco-panel-header">
+          <div className="cg-column-panel">
+            <div className="cg-panel-header">
               <h3>PROPOSED AMENDMENT DRAFT</h3>
-              <span className="draco-domain-badge">{selectedCharter.domain}</span>
+              <span className="cg-domain-badge">{selectedCharter.domain}</span>
             </div>
-            <div className="draco-field">
+            <div className="cg-field">
               <label>Revised Mandate Prose</label>
               <textarea
-                className="draco-textarea"
+                className="cg-textarea"
                 value={revisedText}
                 onChange={(e) => setRevisedText(e.target.value)}
                 minLength={60}
                 required
               />
             </div>
-            <div className="draco-field">
+            <div className="cg-field">
               <label>Changelog & Semantic Disclosure</label>
               <textarea
-                className="draco-textarea"
+                className="cg-textarea"
                 style={{ minHeight: '80px' }}
                 value={changelog}
                 onChange={(e) => setChangelog(e.target.value)}
@@ -591,14 +591,14 @@ function SentryView({
               />
             </div>
             <ActionEditor action={action} onChange={setAction} />
-            <button className="draco-btn-primary" onClick={handlePropose}>
+            <button className="cg-btn-primary" onClick={handlePropose}>
               Submit Cryptographically Bound Amendment
             </button>
           </div>
 
           {/* Column 3: Audit Council Sentry */}
-          <div className="draco-column-panel">
-            <div className="draco-panel-header">
+          <div className="cg-column-panel">
+            <div className="cg-panel-header">
               <h3>DRACO SENTRY GATE</h3>
               <Layers size={16} color="#f59e0b" />
             </div>
@@ -609,17 +609,17 @@ function SentryView({
                   <span style={{ fontSize: '14px', fontWeight: '700' }}>
                     Draft Epoch {candidate.epoch_number}
                   </span>
-                  <span className={`draco-epoch-badge ${getStatusTone(candidate.status)}`}>
+                  <span className={`cg-epoch-badge ${getStatusTone(candidate.status)}`}>
                     {candidate.status}
                   </span>
                 </div>
 
-                <div className="draco-field">
+                <div className="cg-field">
                   <label>Deterministic Calldata Divergence</label>
-                  <div className="draco-diff-badges">
+                  <div className="cg-diff-badges">
                     {candidate.divergence_flags.length > 0 ? (
                       candidate.divergence_flags.map((flag) => (
-                        <span key={flag} className="draco-diff-pill">
+                        <span key={flag} className="cg-diff-pill">
                           {flag}
                         </span>
                       ))
@@ -629,7 +629,7 @@ function SentryView({
                   </div>
                 </div>
 
-                <div className="draco-field">
+                <div className="cg-field">
                   <label>Submitted Disclosure Changelog</label>
                   <p style={{ fontSize: '12px', color: '#94a3b8', fontStyle: 'italic' }}>
                     "{candidate.changelog_summary}"
@@ -637,7 +637,7 @@ function SentryView({
                 </div>
 
                 <button
-                  className="draco-btn-primary"
+                  className="cg-btn-primary"
                   disabled={!canAuditAmendment(candidate.status)}
                   onClick={handleAudit}
                 >
@@ -645,7 +645,7 @@ function SentryView({
                 </button>
 
                 <button
-                  className="draco-btn-primary"
+                  className="cg-btn-primary"
                   style={{
                     background: canEnactAmendment(candidate.status)
                       ? 'linear-gradient(135deg, #059669 0%, #10b981 100%)'
@@ -658,7 +658,7 @@ function SentryView({
                 </button>
               </>
             ) : (
-              <div className="draco-empty" style={{ padding: '30px 10px' }}>
+              <div className="cg-empty" style={{ padding: '30px 10px' }}>
                 No amendments currently awaiting audit or enactment.
               </div>
             )}
@@ -680,7 +680,7 @@ function CouncilLogView({
   amendments: Record<number, AmendmentRecord>;
 }) {
   return (
-    <div className="draco-audit-list">
+    <div className="cg-audit-list">
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <FileCheck2 size={20} color="#f59e0b" />
         <h2 style={{ fontSize: '18px', fontWeight: '700' }}>Append-Only Semantic Consensus Records</h2>
@@ -693,13 +693,13 @@ function CouncilLogView({
           .map((audit) => {
             const amended = amendments[audit.amendment_id];
             return (
-              <div key={audit.audit_id} className="draco-audit-card">
-                <div className="draco-audit-top">
+              <div key={audit.audit_id} className="cg-audit-card">
+                <div className="cg-audit-top">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '800', color: '#f59e0b' }}>
                       AUDIT #{String(audit.audit_id).padStart(2, '0')} (Epoch {amended?.epoch_number || audit.amendment_id})
                     </span>
-                    <span className={`draco-epoch-badge ${getStatusTone(audit.final_status)}`}>
+                    <span className={`cg-epoch-badge ${getStatusTone(audit.final_status)}`}>
                       {audit.final_status}
                     </span>
                   </div>
@@ -724,9 +724,9 @@ function CouncilLogView({
                 </div>
 
                 {audit.material_impacts.length > 0 && (
-                  <div className="draco-diff-badges">
+                  <div className="cg-diff-badges">
                     {audit.material_impacts.map((tag) => (
-                      <span key={tag} className="draco-diff-pill" style={{ color: '#a855f7', borderColor: '#a855f7' }}>
+                      <span key={tag} className="cg-diff-pill" style={{ color: '#a855f7', borderColor: '#a855f7' }}>
                         {tag}
                       </span>
                     ))}
@@ -740,7 +740,7 @@ function CouncilLogView({
             );
           })
       ) : (
-        <div className="draco-empty">No semantic consensus audits have landed on-chain yet.</div>
+        <div className="cg-empty">No semantic consensus audits have landed on-chain yet.</div>
       )}
     </div>
   );
@@ -757,7 +757,7 @@ function ActionEditor({
   onChange: (a: ActionItem) => void;
 }) {
   return (
-    <div className="draco-manifest-builder">
+    <div className="cg-manifest-builder">
       <span style={{ fontSize: '12px', fontWeight: '700', color: '#f59e0b', textTransform: 'uppercase' }}>
         Executable Calldata Payload (Deterministic Diff Engine)
       </span>
@@ -765,59 +765,59 @@ function ActionEditor({
         These fields are strictly diffed by Python smart contract code, never trusted to LLM inference.
       </p>
 
-      <div className="draco-manifest-grid">
-        <div className="draco-field">
+      <div className="cg-manifest-grid">
+        <div className="cg-field">
           <label>Target Contract Address</label>
           <input
-            className="draco-input"
+            className="cg-input"
             value={action.target}
             onChange={(e) => onChange({ ...action, target: e.target.value })}
             required
           />
         </div>
-        <div className="draco-field">
+        <div className="cg-field">
           <label>Function Selector (4-byte hex)</label>
           <input
-            className="draco-input"
+            className="cg-input"
             value={action.selector}
             onChange={(e) => onChange({ ...action, selector: e.target.value })}
             required
           />
         </div>
-        <div className="draco-field">
+        <div className="cg-field">
           <label>Recipient Address</label>
           <input
-            className="draco-input"
+            className="cg-input"
             value={action.recipient}
             onChange={(e) => onChange({ ...action, recipient: e.target.value })}
             required
           />
         </div>
-        <div className="draco-field">
+        <div className="cg-field">
           <label>Asset Symbol or Token Address</label>
           <input
-            className="draco-input"
+            className="cg-input"
             value={action.asset}
             onChange={(e) => onChange({ ...action, asset: e.target.value })}
             required
           />
         </div>
-        <div className="draco-field">
+        <div className="cg-field">
           <label>Native Value (wei)</label>
           <input
             type="number"
-            className="draco-input"
+            className="cg-input"
             value={action.value}
             onChange={(e) => onChange({ ...action, value: Number(e.target.value) })}
             min={0}
             required
           />
         </div>
-        <div className="draco-field">
+        <div className="cg-field">
           <label>Token Amount</label>
           <input
             type="number"
-            className="draco-input"
+            className="cg-input"
             value={action.amount}
             onChange={(e) => onChange({ ...action, amount: Number(e.target.value) })}
             min={0}
