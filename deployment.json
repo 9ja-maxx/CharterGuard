@@ -1,0 +1,10 @@
+{
+  "project": "DracoCharter",
+  "network": "GenLayer Studio Next",
+  "chain_id": 61997,
+  "contract_address": null,
+  "deployer": null,
+  "status": "READY_FOR_DEPLOYMENT",
+  "frontend_url": null,
+  "notes": "Intelligent Contract is fully tested, linted, and ready for deployment on Studio Next."
+}
