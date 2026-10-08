@@ -3,10 +3,12 @@
 > **Autonomous DAO Governance Mandate & Revision Sentry on GenLayer**  
 > *Governed by Multi-Validator Comparative Consensus, Deterministic Calldata Diffing, and Author-Only Enactment Sentry.*
 
-[![GenLayer Studio Next](https://img.shields.io/badge/GenLayer-Studio_Next_61997-f59e0b?style=for-the-badge&logo=ethereum&logoColor=black)](https://explorer-studio-dev.genlayer.com)
+[![GenLayer Studio Next](https://img.shields.io/badge/GenLayer-Studio_Next_61997-f59e0b?style=for-the-badge&logo=ethereum&logoColor=black)](https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4)
+[![Deployed Contract](https://img.shields.io/badge/Deployed-0x2647...a0D4-3b82f6?style=for-the-badge&logo=solidity)](https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4)
 [![GenVM Linter](https://img.shields.io/badge/GenVM_Linter-3_Checks_Passed-10b981?style=for-the-badge)](contracts/charter_guard.py)
 [![Test Suite](https://img.shields.io/badge/Pytest-20_Passed-10b981?style=for-the-badge)](tests/test_charter_guard.py)
 [![Frontend](https://img.shields.io/badge/React_19-TypeScript_Vite-6366f1?style=for-the-badge)](frontend/)
+
 
 ---
 
@@ -160,20 +162,38 @@ cd frontend && npm run build
 
 ---
 
-## 🚀 Deployment Guide on GenLayer Studio Next
+## 🌐 Verified Live Deployment on GenLayer Studio Next
 
-1. Open the [GenLayer Studio IDE](https://studio.genlayer.com).
-2. Connect to **GenLayer Studio Next (Chain ID 61997)**.
-3. Import `contracts/charter_guard.py`.
-4. Deploy the contract (the constructor requires zero parameters).
-5. Copy the deployed contract address (e.g. `0x...`).
-6. Configure `frontend/.env`:
+| Parameter | Value |
+| :--- | :--- |
+| **Network** | **GenLayer Studio Next** |
+| **Chain ID** | `61997` |
+| **RPC Endpoint** | `https://studio-next.genlayer.com/api` |
+| **Contract Address** | [`0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4`](https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4) |
+| **Explorer** | [explorer-studio-next.genlayer.com/address/0x2647C6fb...](https://explorer-studio-next.genlayer.com/address/0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4) |
+| **Verification Status** | ✅ **Finalized & RPC Readback Verified** |
+
+### Live RPC Verification
+Query live on-chain protocol state and telemetry directly via the GenLayer JSON-RPC client:
+```bash
+node scripts/inspect_charter.mjs 0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4
+```
+
+---
+
+## 🚀 Running the Web Interface
+
+1. Configure `frontend/.env` (pre-configured with live deployment address):
    ```bash
-   VITE_CONTRACT_ADDRESS=0xYourDeployedContractAddress
+   VITE_CONTRACT_ADDRESS=0x2647C6fb4337E422ad32e12A55D87A4DFe26a0D4
    ```
-7. Start the local client or publish to Cloudflare/Vercel:
+2. Start the development server:
    ```bash
    cd frontend && npm run dev
+   ```
+3. Or build for production deployment:
+   ```bash
+   cd frontend && npm run build
    ```
 
 ---
