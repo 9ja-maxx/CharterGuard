@@ -36,7 +36,7 @@ def test_permissionless_charter_registration(runtime):
     assert epoch_one["divergence_flags"] == []
 
     meta = contract.get_protocol_metadata()
-    assert meta["protocol_name"] == "DracoCharter"
+    assert meta["protocol_name"] == "CharterGuard"
     assert meta["constructor_privileges"] is False
 
 

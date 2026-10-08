@@ -135,12 +135,12 @@ def runtime(monkeypatch):
 
     monkeypatch.setitem(sys.modules, "genlayer", gl_mock)
 
-    contract_path = Path(__file__).parent.parent / "contracts" / "draco_charter.py"
-    spec = importlib.util.spec_from_file_location("draco_charter_test", contract_path)
+    contract_path = Path(__file__).parent.parent / "contracts" / "charter_guard.py"
+    spec = importlib.util.spec_from_file_location("charter_guard_test", contract_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    contract_instance = module.DracoCharter()
+    contract_instance = module.CharterGuard()
     return module, contract_instance, gl_mock, nondet, eq
 
 
